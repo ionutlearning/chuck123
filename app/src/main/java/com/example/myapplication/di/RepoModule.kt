@@ -12,8 +12,9 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface RepoModule {
-    @Provides
-    fun provideMyFirstClass(repo: RemoteRepositoryImpl): MemeRepository
+abstract class RepoModule {
+
+    @Binds
+    abstract fun provideMyFirstClass(repo: RemoteRepositoryImpl): MemeRepository
 }
 
